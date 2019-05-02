@@ -66,7 +66,7 @@ client.on('message', async message => {
 
     //work
     if (msg === prefix + 'work'){
-        userData[sender.id + message.guild.id].money += Math.floor(Math.random()*100);
+        userData[sender.id + message.guild.id].money += 100;
 
         const wEmbed = new discord.RichEmbed()
         .setTitle("🍬you worked🍬")
