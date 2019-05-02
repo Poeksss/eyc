@@ -70,9 +70,9 @@ client.on('message', async message => {
 
         const wEmbed = new discord.RichEmbed()
         .setTitle("🍬you worked🍬")
-        .addField("user who worked:", message.author.id)
+        .addField("user who worked:", message.author.id);
 
-        message.channel.send(wEmbed);
+        message.channel.send({"embed":{wEmbed}});
     }
     
     fs.writeFile('Storage/userData.json', JSON.stringify(userData), (err) => {
