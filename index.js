@@ -7,8 +7,8 @@ let userData =  JSON.parse(fs.readFileSync('Storage/userData.json', 'utf8'));
 
 client.on("ready", ready => {
     console.log('ready!');
+    client.user.setActivity('this server', { type: 'WATCHING' });
 });
-client.user.setActivity('this server', "WATCHING");
 
 client.on("guildMemberAdd", async a => {
     const channel = client.channels.get('572405649678401536');
