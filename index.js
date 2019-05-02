@@ -27,6 +27,7 @@ client.on("guildMemberAdd", async a => {
 
 client.on('message', async message => {
     //variables
+    let args = message.content.split(' ').slice(1);
     let sender = message.author;
     let msg = message.content.toUpperCase();
     let prefix = '>'
@@ -45,8 +46,6 @@ client.on('message', async message => {
     });
     //commands
 
-    //ping
-
     //money [acces balance]
     if (msg === prefix + 'MONEY' || msg === prefix + 'BALANCE'){
         message.channel.send({"embed":{
@@ -63,6 +62,19 @@ client.on('message', async message => {
                 inline:true
             }]
         }});
+    }
+
+    //work
+    if (msg === prefix + 'work'){
+        var raom = Math.floor(Math.random()*100);
+        userData[sender.id + message.guild.id].money += raom;
+
+        const wEmbed = new discord.RichEmbed()
+        .setTitle("🍬you worked🍬")
+        .addField("user who worked:", message.author.id)
+        .addField("amount of candy he earnd:", raom + '🍬');
+
+        message.channel.send(wEmbed);
     }
 
     //daily
