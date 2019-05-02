@@ -74,6 +74,10 @@ client.on('message', async message => {
 
         message.channel.send(wEmbed);
     }
+    
+    fs.writeFile('Storage/userData.json', JSON.stringify(userData), (err) => {
+        if(err) console.error(err);
+    });
 
     //daily
     if (msg === prefix + 'DAILY'){
