@@ -17,7 +17,6 @@ client.on("guildMemberAdd", async a => {
     const jEmbed = new discord.RichEmbed()
     .setTitle('🎉welcome🎉')
     .addField('name:', a.displayName, true)
-    .addField('invited by:', inviter)
     .setColor('#42f459');
 
     await channel.send(jEmbed);
