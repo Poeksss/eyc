@@ -66,13 +66,11 @@ client.on('message', async message => {
 
     //work
     if (msg === prefix + 'work'){
-        var raom = Math.floor(Math.random()*100);
-        userData[sender.id + message.guild.id].money += raom;
+        userData[sender.id + message.guild.id].money += Math.floor(Math.random()*100);
 
         const wEmbed = new discord.RichEmbed()
         .setTitle("🍬you worked🍬")
         .addField("user who worked:", message.author.id)
-        .addField("amount of candy he earnd:", raom + '🍬');
 
         message.channel.send(wEmbed);
     }
