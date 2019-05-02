@@ -67,12 +67,6 @@ client.on('message', async message => {
     //work
     if (msg === prefix + 'work'){
         userData[sender.id + message.guild.id].money += 100;
-
-        const wEmbed = new discord.RichEmbed()
-        .setTitle("🍬you worked🍬")
-        .addField("user who worked:", message.author.id);
-
-        message.channel.send({"embed":{wEmbed}});
     }
     
     fs.writeFile('Storage/userData.json', JSON.stringify(userData), (err) => {
