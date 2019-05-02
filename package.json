@@ -1,0 +1,16 @@
+{
+  "name": "eymb",
+  "version": "0.0.1",
+  "description": "bruh",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Poeks",
+  "license": "ISC",
+  "dependencies": {
+    "discord-economy": "^1.1.6",
+    "discord.js": "^11.4.2",
+    "moment": "^2.24.0"
+  }
+}
